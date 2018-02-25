@@ -1,4 +1,4 @@
-# Swagger-file Generator for Buffalo
+# Swagger-file Generator for Buffalo (WIP)
 
 This is a plugin for the [buffalo](https://github.com/gobuffalo/buffalo) generator.
 It could be used to generate a swagger file form an existings buffalo api project.
