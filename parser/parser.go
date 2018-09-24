@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/gobuffalo/buffalo/meta"
+	"github.com/markbates/inflect"
 )
 
 type Property struct {
@@ -18,7 +18,7 @@ type Property struct {
 }
 
 type Definition struct {
-	Name       meta.Name
+	Name       inflect.Name
 	Properties []Property
 }
 
@@ -57,7 +57,7 @@ func (p *Parser) parseDefinitions() error {
 			if typeDecl, ok := decl.(*ast.GenDecl); ok {
 				for _, strDecl := range typeDecl.Specs {
 					if tspec, ok := strDecl.(*ast.TypeSpec); ok {
-						structName := meta.Name(tspec.Name.Name)
+						structName := inflect.Name(tspec.Name.Name)
 						definition := Definition{
 							Name: structName,
 						}
